@@ -1,0 +1,107 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>グラブルスキル餌カウンター</title>
+  <meta name="description" content="グラブルスキル餌カウンター">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="@blueprintjs/core/lib/css/blueprint.css">
+  <link rel="stylesheet" href="@blueprintjs/icons/lib/css/blueprint-icons.css">
+  <script type="text/javascript" src="collect.js/build/collect.js"></script>
+  <script src="popup.js"></script>
+    
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Rarity</th>
+            <th>From</th>
+            <th>To</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="rarity">
+                        <option value="1">SSR</option>
+                        <option value="2">バハ/天司/オメガ</option>
+                        <option value="3">SR</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="from">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                </div>                    
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="to">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                    </select>
+                </div>                    
+                <td><button id="go" type="button" class="bp3-button">Go!</button></td>
+            </td>   
+        </tr>
+
+
+    </table>
+    <table class="bp3-html-table bp3-html-table-bordered">
+        <thead>
+        <tr>
+            <th>&nbsp;P&nbsp;</th>
+            <th>&nbsp;D&nbsp;</th>
+            <th>SR&nbsp;</th>
+            <th>SSR</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><span id="p" >&nbsp;</span></td>
+            <td><span id="d">&nbsp;</span></td>
+            <td><span id="sr">&nbsp;</span></td>
+            <td><span id="ssr">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td colspan="4"><button style="float:right;" id="settings" type="button" class="bp3-minimal bp3-button bp3-icon-large bp3-icon-settings">設定</button></td>
+        </tr>    
+    </tbody>
+        
+    </table>
+    
+    
+</body>
+</html>

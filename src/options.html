@@ -1,0 +1,404 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>グラブルスキル餌カウンター</title>
+    <meta name="description" content="グラブルスキル餌カウンター">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="options.css">
+    <script src="options.js"></script>
+    <link rel="stylesheet" href="@blueprintjs/core/lib/css/blueprint.css">
+    <link rel="stylesheet" href="@blueprintjs/icons/lib/css/blueprint-icons.css" >
+    <script type="text/javascript" src="collect.js/build/collect.js"></script>
+</head>
+
+<body>
+    <h1>設定</h1>
+    <button style="float:right;" id="save" type="button" class="bp3-button">保存</button>
+    <small>※デビルエレメントはスキルlv2の状態（つまりプチデビルエレメントを2つ使用した状態）でカウントしています。</small>
+    <table class="bp3-html-table bp3-fill bp3-interactive bp3-html-table-bordered">
+        <thead>
+        <tr>
+            <th><h2>スキルlv</h2></th>
+            <th>
+                <h2>SSR</h2>
+            </th>
+            <th>
+                <h2>バハ/天司/オメガ</h2>
+            </th>
+            <th>
+                <h2>SR</h2>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <span class="skillv">1</span>&nbsp;to&nbsp;2
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="ssr1">
+                        <option value="1">1.&nbsp;SR-SR
+                        <option value="2">2.&nbsp;R-R-R-R&nbsp;+&nbsp;SR
+                        <option value="3">3.&nbsp;p-p&nbsp;+&nbsp;SR
+                        <option value="4">3.&nbsp;R-R-R-R-R&nbsp;&nbsp;R-R-R&nbsp;
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select disabled id="baha1">
+                        <option value="1">1.&nbsp;SSR
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="sr1">
+                        <option value="1">1.&nbsp;SR
+                        <option value="2">2.&nbsp;R-R-R-R
+                        <option value="3">3.&nbsp;p-p
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">2</span>&nbsp;to&nbsp;3
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="ssr2">
+                        <option value="1">1.&nbsp;SR-SR-SR
+                        <option value="2">2.&nbsp;R-R-R-R&nbsp;+&nbsp;SR-SR-SR
+                        <option value="3">3.&nbsp;p-p&nbsp;+&nbsp;SR-SR-SR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select disabled id="baha2">
+                        <option value="1">1.&nbsp;2SSR
+                    </select>
+                </div>
+            </td>
+            <td>
+
+                <div class="bp3-select bp3-fill">
+                    <select id="sr2">
+                        <option value="1">1.&nbsp;SR-SR
+                        <option value="2">2.&nbsp;R-R-R-R&nbsp;+&nbsp;SR
+                        <option value="3">3.&nbsp;p-p-p-p
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">3</span>&nbsp;to&nbsp;4
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="ssr3">
+                        <option value="1">1.&nbsp;R&nbsp;+&nbsp;SR-SR-SR-SR-SR&nbsp;&nbsp;SR
+                        <option value="2">2.&nbsp;p&nbsp;+&nbsp;D&nbsp;+&nbsp;SR-SR-SR
+                        <option value="3">3.&nbsp;2SR-2SR-2SR
+                        <option value="4">4.&nbsp;R&nbsp;+&nbsp;D&nbsp;+&nbsp;SR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select disabled id="baha3">
+                        <option value="1">1.&nbsp;3SSR
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="sr3">
+                        <option value="1">1.&nbsp;R&nbsp;+&nbsp;SR-SR-SR
+                        <option value="2">2.&nbsp;R-R-R&nbsp;+&nbsp;D
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">4</span>&nbsp;to&nbsp;5
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="ssr4">
+                        <option value="1">1.&nbsp;SR-SR-SR-SR-SR&nbsp;&nbsp;SR-SR-SR
+                        <option value="2">2.&nbsp;2SR-2SR-2SR-2SR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select disabled id="baha4">
+                        <option value="1">1.&nbsp;4SSR
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select disabled id="sr4">
+                        <option value="1">1.&nbsp;SR-SR-SR-SR
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">5</span>&nbsp;to&nbsp;6
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="ssr5">
+                        <option value="1">1.&nbsp;SSR
+                        <option value="2">2.&nbsp;SR-SR-SR-SR-SR&nbsp;&nbsp;SR-SR-SR-SR-SR
+                        <option value="3">3.&nbsp;2SR-2SR-2SR-2SR-2SR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="baha5">
+                        <option value="1">1.&nbsp;2SSR&nbsp;+&nbsp;3SSR
+                        <option value="2">2.&nbsp;SSR&nbsp;+&nbsp;2SSR-2SSR
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="sr5">
+                        <option value="1">1.&nbsp;SR-SR-SR-SR-SR
+                        <option value="2">2.&nbsp;R&nbsp;+&nbsp;D-D
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">6</span>&nbsp;to&nbsp;7
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="ssr6">
+                        <option value="1">1.&nbsp;SR-SR&nbsp;+&nbsp;SSR
+                        <option value="2">2.&nbsp;D-D-D-D-D
+                        <option value="3">3.&nbsp;R&nbsp;+&nbsp;D-D&nbsp;+&nbsp;SR-SR-SR-SR-SR&nbsp;&nbsp;SR-SR
+                        <option value="4">4.&nbsp;R&nbsp;+&nbsp;2SR-2SR-2SR-2SR-2SR&nbsp;&nbsp;2SR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="baha6">
+                        <option value="1">1.&nbsp;3SSR-3SSR-3SSR
+                        <option value="2">2.&nbsp;2SSR-2SSR-2SSR-2SSR
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="sr6">
+                        <option value="1">1.&nbsp;R&nbsp;+&nbsp;SR-SR-SR-SR-SR&nbsp;&nbsp;SR
+                        <option value="2">2.&nbsp;R&nbsp;+&nbsp;D-D&nbsp;+&nbsp;SR
+                        <option value="3">3.&nbsp;R-R-R&nbsp;+&nbsp;D&nbsp;+&nbsp;SR-SR-SR
+                        <option value="4">4.&nbsp;R&nbsp;+&nbsp;2SR-2SR-2SR
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">7</span>&nbsp;to&nbsp;8
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select disabled id="ssr7">
+                        <option value="1">1.&nbsp;2SSR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="baha7">
+                        <option value="1">1.&nbsp;3SSR&nbsp;+&nbsp;4SSR
+                        <option value="2">2.&nbsp;2SSR-2SSR&nbsp;+&nbsp;3SSR
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="sr7">
+                        <option value="1">1.&nbsp;R&nbsp;+&nbsp;SR-SR-SR-SR-SR&nbsp;&nbsp;SR-SR
+                        <option value="2">2.&nbsp;R&nbsp;+&nbsp;D-D&nbsp;+&nbsp;SR-SR
+                        <option value="3">3.&nbsp;R-R-R&nbsp;+&nbsp;D&nbsp;+&nbsp;SR-SR-SR-SR
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">8</span>&nbsp;to&nbsp;9
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select disabled id="ssr8">
+                        <option value="1">1.&nbsp;2SSR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="baha8">
+                        <option value="1">1.&nbsp;2SSR&nbsp;+&nbsp;3SSR-3SSR
+                        <option value="2">2.&nbsp;4SSR-4SSR
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="sr8">
+                        <option value="1">1.&nbsp;SR-SR-SR-SR-SR&nbsp;&nbsp;SR-SR-SR
+                        <option value="2">2.&nbsp;2SR-2SR-2SR-2SR
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">9</span>&nbsp;to&nbsp;10
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select disabled id="ssr9">
+                        <option value="1">1.&nbsp;2SSR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="baha9">
+                        <option value="1">1.&nbsp;3SSR-3SSR-3SSR
+                        <option value="2">2.&nbsp;SSR&nbsp;+&nbsp;4SSR-4SSR
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="sr9">
+                        <option value="1">1.&nbsp;SR-SR-SR-SR-SR&nbsp;&nbsp;SR-SR-SR-SR
+                        <option value="2">2.&nbsp;SR&nbsp;+&nbsp;2SR-2SR-2SR-2SR
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">10</span>&nbsp;to&nbsp;11
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select disabled id="ssr10">
+                        <option value="1">1.&nbsp;2SSR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="baha10">
+                        <option value="1">1.&nbsp;3SSR-3SSR&nbsp;+&nbsp;4SSR
+                        <option value="2">2.&nbsp;SSR&nbsp;+&nbsp;3SSR-3SSR-3SSR
+                    </select>
+                </div>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">11</span>&nbsp;to&nbsp;12
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select disabled id="ssr11">
+                        <option value="1">1.&nbsp;SR-SR&nbsp;+&nbsp;2SSR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="baha11">
+                        <option value="1">1.&nbsp;3SSR&nbsp;+&nbsp;4SSR-4SSR
+                        <option value="2">2.&nbsp;2SSR&nbsp;+&nbsp;3SSR-3SSR-3SSR
+                    </select>
+                </div>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">12</span>&nbsp;to&nbsp;13
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="ssr12" disabled>
+                        <option value="1">1.&nbsp;3SSR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="baha12">
+                        <option value="1">1.&nbsp;4SSR-4SSR-4SSR
+                        <option value="2">2.&nbsp;3SSR-3SSR-3SSR-3SSR
+                    </select>
+                </div>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">13</span>&nbsp;to&nbsp;14
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select disabled id="ssr13">
+                        <option value="1">1.&nbsp;3SSR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="baha13">
+                        <option value="1">1.&nbsp;4SSR-4SSR-4SSR&nbsp;+&nbsp;SSR
+                        <option value="2">2.&nbsp;3SSR-3SSR-3SSR-3SSR&nbsp;+&nbsp;SSR
+                    </select>
+                </div>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <span class="skillv">14</span>&nbsp;to&nbsp;15
+            </td>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select disabled id="ssr14">
+                        <option value="1">1.&nbsp;3SSR
+                    </select>
+                </div>
+            <td>
+                <div class="bp3-select bp3-fill">
+                    <select id="baha14">
+                        <option value="1">1.&nbsp;4SSR-4SSR-4SSR&nbsp;+&nbsp;2SSR
+                        <option value="2">2.&nbsp;3SSR-3SSR-3SSR-3SSR&nbsp;+&nbsp;2SSR
+                    </select>
+                </div>
+            </td>
+            <td></td>
+        </tr>
+    </tbody>
+    </table>
+    <small>p:&nbsp;プチデビルエレメント</small><br>
+    <small>D:&nbsp;デビルエレメント</small><br>
+    <small>xSR(xSSR):&nbsp;スキルlvがxのSRまたはSSR</small><br>
+</body>
+
+</html>

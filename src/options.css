@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+
+html,body{
+    font-family: 'Menlo',sans-serif;
+    font-size: 14px;
+    margin-right: auto;
+    margin-left: 80px;
+    padding: 0;
+    width: 1000px;
+}
+table{
+    width: 100%;
+}
+span.skillv{
+    font-size: 32px;
+}
