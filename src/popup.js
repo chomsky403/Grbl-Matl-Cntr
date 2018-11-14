@@ -10,14 +10,10 @@ window.onload = function () {
       [1,1,1,1,1,1,1,1,1,1]
     ];
   };
-  console.log(setvalues);
 
 document.getElementById("from").onchange = function(){
   autogetvalue(this);
 }
-// document.getElementById("to").onchange = function () {
-//   autogetvalue(this);
-// };
   
   document.getElementById("go").onclick = function(){
   let rarity = getoptionvalue("rarity");
@@ -26,7 +22,6 @@ document.getElementById("from").onchange = function(){
   
   let output_vals = Sum_until(rarity, from, to);
   const collection = collect(output_vals);
-  console.log(output_vals)
   let d_sum = collection.sum('d');
   let p_sum = collection.sum('p') + d_sum;
   let sr_sum = collection.sum('sr');
@@ -157,12 +152,10 @@ document.getElementById("from").onchange = function(){
 
   function Sum_until(rarity, from, to) {
     let wkcmb = new Array();
-    console.log(wkcmb);
     rarity -= 1;
     from -= 1;
     to -= 1;
     for (let i = from; i < to; i++) {
-      console.log(i);
       switch (rarity) {
         case 0:
           wkcmb.push(ssr[i].selectedcmb(rarity, i));
@@ -175,7 +168,6 @@ document.getElementById("from").onchange = function(){
           break;
       };
     };
-    console.log(wkcmb);
     return wkcmb;
   };
 
