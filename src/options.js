@@ -1,11 +1,9 @@
 window.onload = function () {
-  let rarityinfo = [["ssr", 15], ["baha", 20], ["sr", 10]];
+  let rarityinfo = [["ssr", 20], ["baha", 15], ["sr", 10]];
 
   let getjson = localStorage.getItem('set');
-  console.log(getjson);
   if (getjson != null) {
     var obj = JSON.parse(getjson);
-    console.log(obj);
     setvalues(obj);
   };
 
@@ -24,7 +22,6 @@ window.onload = function () {
     for(let i = 0; i < rarityinfo.length; i++){
       for (let j = 1; j < rarityinfo[i][1]; j++) {
         let wkid = rarityinfo[i][0] + j;
-        console.log(wkid);
         let wkelm = document.getElementById(wkid)
         wkelm.selectedIndex = values[i][j-1]-1;
       };
@@ -34,7 +31,6 @@ window.onload = function () {
     let wkarray = [];
     for (let j = 1; j < rarityinfo[cnt][1]; j++) {
       let wkid = rarityinfo[cnt][0] + j;
-      console.log(wkid);
       let wkelm = document.getElementById(wkid)
       let wkidx = wkelm.selectedIndex;
       let wkval = wkelm.options[wkidx].value;

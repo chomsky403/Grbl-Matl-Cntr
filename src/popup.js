@@ -5,8 +5,8 @@ window.onload = function () {
     setvalues = JSON.parse(getjson);
   }else{
     setvalues = [
-      [1,1,1,1,1,1,1,1,1,1,1,1,1,1],
       [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1],
       [1,1,1,1,1,1,1,1,1,1]
     ];
   };
@@ -153,16 +153,7 @@ document.getElementById("from").onchange = function(){
   baha[12] = new Cmb([Calc(ssr4, 3, ssr1), Calc(ssr3, 4, ssr1)]);
   //baha14
   baha[13] = new Cmb([Calc(ssr4, 3, ssr2), Calc(ssr3, 4, ssr2)]);
-  //baha15
-  baha[14] = new Cmb([Calc(ssr4, 3, ssr3), Calc(ssr3, 5)]);
-  //baha16
-  baha[15] = new Cmb([Calc(ssr4, 4), Calc(ssr3, 5, ssr1)]);
-  //baha17
-  baha[16] = new Cmb([Calc(ssr4, 4, ssr1), Calc(ssr3, 5, ssr2)]);
-  //baha18
-  baha[17] = new Cmb([Calc(ssr4, 4, ssr2), Calc(ssr3, 6)]);
-  //baha19
-  baha[18] = new Cmb([Calc(ssr4, 4, ssr3), Calc(ssr3, 6, ssr1)]);
+  
 
   document.getElementById("settings").onclick = function(){
     window.open(chrome.extension.getURL("options.html"));
