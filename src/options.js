@@ -1,5 +1,5 @@
 window.onload = function () {
-  var rarityinfo = [["ssr", 15], ["baha", 15], ["sr", 10]];
+  let rarityinfo = [["ssr", 15], ["baha", 20], ["sr", 10]];
 
   let getjson = localStorage.getItem('set');
   console.log(getjson);
