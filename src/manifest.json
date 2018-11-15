@@ -1,7 +1,7 @@
 {
   "name": "グラブルスキル餌カウンター",
   "description": "グラブルの武器スキルlvを上げるために必要な餌の数を計算できます。",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "manifest_version": 2,
   "browser_action": {
     "default_icon": "icon.png",
